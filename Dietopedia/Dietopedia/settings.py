@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Diet_calculations',
     'Profile',
-    'Sign',
+    'Login.apps.LoginConfig',
 ]
 
 MIDDLEWARE = [
