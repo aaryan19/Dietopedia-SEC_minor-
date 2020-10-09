@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Diet_calculations',
     'Profile',
     'Login.apps.LoginConfig',
+    'Dish_Recomendation'
 ]
 
 MIDDLEWARE = [
