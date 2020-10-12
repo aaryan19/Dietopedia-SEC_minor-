@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Dietopedia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Testing',
+        'NAME': 'Dietopedia',
         'USER': 'postgres',
         'PASSWORD': 'shaurabh1234',
         'HOST': 'localhost'

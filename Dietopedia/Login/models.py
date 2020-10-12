@@ -8,4 +8,6 @@ class Customers(models.Model):
     Gender=models.CharField(max_length=20)
     Age=models.IntegerField()
     Email= models.EmailField(max_length=70,blank=True, null= True, unique= True)
+    Password=models.CharField(max_length=20,null=False,default="hello")
+    ConfirmPassword=models.CharField(max_length=20,null=False,default="hello")
 
