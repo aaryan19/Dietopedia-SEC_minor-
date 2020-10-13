@@ -7,7 +7,8 @@ class Customers(models.Model):
     Last_Name=models.CharField(max_length=20)
     Gender=models.CharField(max_length=20)
     Age=models.IntegerField()
-    Email= models.EmailField(max_length=70,blank=True, null= True, unique= True)
-    Password=models.CharField(max_length=20,null=False,default="hello")
-    ConfirmPassword=models.CharField(max_length=20,null=False,default="hello")
+    Email= models.EmailField(max_length=70,blank=False , unique= True)
+    Password=models.CharField(max_length=20,blank=False,default="hello")
+    ConfirmPassword=models.CharField(max_length=20,blank=False,default="hello")
+    ProfilePic=models.ImageField(blank=True,null=True)
 

@@ -151,7 +151,7 @@
 		
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="{% static 'Website_all/assets/images/thumb-1@2x.png' %}" alt="" class="img-circle" width="44" />
-							Ram Bahadur
+							{{user}}
 						</a>
 		
 						<ul class="dropdown-menu">
@@ -362,7 +362,7 @@
 			<div class="col-sm-2">
 				
 				<a href="#" class="profile-picture">
-					<img src="{% static 'Website_all/assets/images/profile-picture.png' %}" style="margin-top: 10%;" class="img-responsive img-circle" />
+					<img src="{{ customer.img.url }}" style="margin-top: 10%;" class="img-responsive img-circle" />
 				</a>
 				
 			</div>
@@ -373,7 +373,7 @@
 					<li>
 						<div class="profile-name">
 							<strong>
-								<a href="#">Ram Bahadur</a>
+								<a href="#">{{user.first_name  }} {{user.last_name }}</a>
 								<a href="#" class="user-status is-online tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Online"></a>
 								<!-- User statuses available classes "is-online", "is-offline", "is-idle", "is-busy" -->						</strong>
 				

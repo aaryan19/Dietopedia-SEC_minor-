@@ -29,7 +29,7 @@ def SignIn(request):
             user = auth.authenticate(username=username,password=password)
             if user is not None:
                 auth.login(request,user)
-                return (redirect('/'))
+                return (redirect('/profile/',{user}))
             else:
                 messages.info(request,"Invalid Credentials")
                 return (redirect('/log/signin'))
