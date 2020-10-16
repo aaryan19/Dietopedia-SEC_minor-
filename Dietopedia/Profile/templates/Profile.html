@@ -1,0 +1,485 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Profile" />
+	<meta name="author" content="" />
+
+
+	<title>Profile</title>
+	
+	<link rel="stylesheet" href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/font-icons/entypo/css/entypo.css' %}">
+	<link rel="stylesheet" href="{% static '//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' %}">
+	
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-core.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-theme.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-forms.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/skins/green.css' %}">
+
+	<script src="{% static 'Website_all/assets/js/jquery-1.11.3.min.js' %}"></script>
+	
+
+
+</head>
+<body  class="page-body  skin-green" data-url="http://neon.dev" >
+
+<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+		
+
+	<div class="sidebar-menu">
+
+		<div class="sidebar-menu-inner pt-6">
+			
+			<header class="logo-env">
+
+				<!-- logo -->
+				<div class="logo ">
+					<a href="index.html">
+						<h1 style=" font-size:300% ; color:white ",>Dietopedia</h1>
+					</a>
+				</div>
+
+				<!-- logo collapse icon -->
+				<div class="sidebar-collapse" style="margin-left: 10px;">
+					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+								
+				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+				<div class="sidebar-mobile-menu visible-xs">
+					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+			</header>
+			
+									
+			<ul id="main-menu" class="main-menu" style="margin-top: 150px;">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li class=" has-sub">
+					<a href="BMI">
+						<i class="entypo-calendar"></i>
+				
+						<span class="title">Calculator</span>	
+					</a>
+					<ul class="">
+						<li class="active">
+							<a href="../calculator/BMI">
+								<span class="title">BMI</span>
+							</a>
+						</li>
+						<li >
+							<a href="../calculator/BDI">
+								<span class="title">BDI</span>
+							</a>
+						</li>
+						
+						
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="../calculator/History">
+						<i class="entypo-layout"></i>
+						<span class="title">History</span>
+					</a>
+					
+				</li>
+
+					
+				<li class="has-sub">
+					<a href="../Dish_Recomendation">
+						<i class="entypo-newspaper"></i>
+						<span class="title">Dish Recomendation</span>
+					</a>
+					
+				</li>
+				
+				
+				<li class="active">
+					<a href="../profile">
+						<i class="entypo-newspaper"></i>
+						<span class="title">Profile</span>
+					</a>
+					
+				</li>
+			
+				<li class="has-sub">
+					<a href="Logout">
+						<i class="entypo-doc-text"></i>
+						<span class="title">Log Out</span>
+					</a>
+				</li>
+				
+			</ul>
+			
+		</div>
+
+	</div>
+
+
+
+	<div class="main-content" style="background-color: wheat;position: fixed " >
+				
+		<div class="row">
+		
+			<!-- Profile Info and Notifications -->
+			<div class="col-md-6 col-sm-8 clearfix">
+		
+				<ul class="user-info pull-left pull-none-xsm">
+		
+					<!-- Profile Info -->
+					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<img  class="img-circle" width="44" src="{{user.customers.ProfilePic.url}}"  />
+							
+							<b>Hello ,{{user}}</b>
+						</a>
+		
+						<ul class="dropdown-menu">
+		
+							<!-- Reverse Caret -->
+							<li class="caret"></li>
+		
+							<!-- Profile sub-links -->
+							<li>
+								<a href="extra-timeline.html">
+									<i class="entypo-user"></i>
+									Edit Profile
+								</a>
+							</li>
+		
+							
+		
+							<li>
+								<a href="extra-calendar.html">
+									<i class="entypo-calendar"></i>
+									Calendar
+								</a>
+							</li>
+		
+							<li>
+								<a href="#">
+									<i class="entypo-clipboard"></i>
+									Subscription
+								</a>
+							</li>
+						</ul>
+					</li>
+		
+				</ul>
+				
+				<ul class="user-info pull-left pull-right-xs pull-none-xsm">
+		
+					<!-- Raw Notifications -->
+					<li class="notifications dropdown">
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-attention"></i>
+							<span class="badge badge-info">6</span>
+						</a>
+		
+						<ul class="dropdown-menu">
+							<li class="top">
+								<p class="small">
+									<a href="#" class="pull-right">Mark all Read</a>
+									You have <strong>3</strong> new notifications.
+								</p>
+							</li>
+							
+							<li>
+								<ul class="dropdown-menu-list scroller">
+									<li class="unread notification-success">
+										<a href="#">
+											<i class="entypo-user-add pull-right"></i>
+											
+											<span class="line">
+												<strong>New user registered</strong>
+											</span>
+											
+											<span class="line small">
+												30 seconds ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="unread notification-secondary">
+										<a href="#">
+											<i class="entypo-heart pull-right"></i>
+											
+											<span class="line">
+												<strong>Your calories level low</strong>
+											</span>
+											
+											<span class="line small">
+												2 minutes ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-primary">
+										<a href="#">
+											<i class="entypo-user pull-right"></i>
+											
+											<span class="line">
+												<strong>Privacy settings have been changed</strong>
+											</span>
+											
+											<span class="line small">
+												3 hours ago
+											</span>
+										</a>
+									</li>
+									
+									
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="#">View all notifications</a>
+							</li>
+						</ul>
+		
+					</li>
+		
+					
+					<!-- Task Notifications -->
+					<li class="notifications dropdown">
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-list"></i>
+							<span class="badge badge-warning">1</span>
+						</a>
+		
+						<ul class="dropdown-menu">
+							<li class="top">
+								<p>Your Intakes</p>
+							</li>
+							
+							<li>
+								<ul class="dropdown-menu-list scroller">
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Protien</span>
+												<span class="percent">27%</span>
+											</span>
+										
+											<span class="progress">
+												<span style="width: 27%;" class="progress-bar progress-bar-success">
+													<span class="sr-only">27% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Carbohydrates</span>
+												<span class="percent">83%</span>
+											</span>
+											
+											<span class="progress progress-striped">
+												<span style="width: 83%;" class="progress-bar progress-bar-danger">
+													<span class="sr-only">83% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Fats</span>
+												<span class="percent">91%</span>
+											</span>
+											
+											<span class="progress">
+												<span style="width: 91%;" class="progress-bar progress-bar-success">
+													<span class="sr-only">91% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+								
+									
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Total Progress</span>
+												<span class="percent">17%</span>
+											</span>
+											
+											<span class="progress progress-striped">
+												<span style="width: 17%;" class="progress-bar progress-bar-important">
+													<span class="sr-only">17% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="#">See all tasks</a>
+							</li>
+						</ul>
+		
+					</li>
+		
+				</ul>
+		
+			</div>
+		
+		
+			<!-- Raw Links -->
+			
+		</div>
+		
+		<hr />
+		
+		
+		<div class="profile-env" >
+		<header class="row" style="background-color: #4b97b582;margin-left: -9%;" >
+				
+			<div class="col-sm-2" style="margin-left: 7%;
+			width: 11.67%;
+			margin-top: 1%;
+			margin-bottom: 1%;">
+				
+				<a href="#" class="profile-picture" >
+					<img src="{{user.customers.ProfilePic.url}}" style="" class="img-responsive " />
+					
+				</a>
+				
+			</div>
+			
+			<div class="col-sm-7">
+				
+				<ul class="profile-info-sections">
+					<li>
+						<div class="profile-name">
+							<strong>
+								<a href="#">{{user.first_name  }} {{user.last_name }}</a>
+								<a href="#" class="user-status is-online tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Online"></a>
+								<!-- User statuses available classes "is-online", "is-offline", "is-idle", "is-busy" -->						</strong>
+				
+						</div>
+					</li>
+					
+					<li>
+						<div class="profile-stat">
+							<h3>6 Weeks</h3>
+							<span><a href="#">Subscription</a></span>
+						</div>
+					</li>
+					
+					<li>
+						<div class="profile-stat">
+							<h3 style="color: aliceblue;">{{user.customers.Calories}}</h3>
+							<span><a href="#"style="color: aliceblue;">Calories Per day</a></span>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+			
+		
+			
+		</header>
+	</div>
+	
+
+	
+		<section  class="profile-info-tabs">
+					
+			<div style="background-color: #4b97b582;margin-left: -21px;" class="row">
+				
+				<div class="col-sm-offset-2 col-sm-10">
+					
+					<ul style="margin-left: -8%;
+					margin-top: -9%;" class="user-details">
+						<li>
+							<a href="">
+								<i class="entypo-location"></i>
+								{{user.email}}
+							</a>
+						</li>
+						
+					
+						
+						<li>
+							<a href="">
+								<i class="entypo-calendar"></i>
+								{{user.last_login}}	
+							</a>
+						</li>
+					</ul>
+					
+				
+					
+				</div>
+				
+			</div>
+			
+		</section>
+		
+		
+		
+
+			<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+				
+				
+			
+					
+					
+					
+				</div>
+			
+				<!-- Imported scripts on this page -->
+				<script src="{% static 'Website_all/assets/js/neon-chat.js' %}"></script>
+
+
+				<!-- JavaScripts initializations and stuff -->
+				<script src="{% static 'Website_all/assets/js/neon-custom.js' %}"></script>
+
+				
+				
+				<!-- Bottom scripts (common) -->
+				<script src="{% static 'Website_all/assets/js/gsap/TweenMax.min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/bootstrap.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/joinable.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/resizeable.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/neon-api.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/rickshaw/vendor/d3.v3.js' %}"></script>
+			
+			
+				<!-- Imported scripts on this page -->
+				<script src="{% static 'Website_all/assets/js/rickshaw/rickshaw.min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/raphael-min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/morris.min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/jquery.peity.min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/neon-charts.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/jquery.sparkline.min.js' %}"></script>
+				<script src="{% static 'Website_all/assets/js/neon-chat.js' %}"></script>
+				
+			
+			
+				
+			
+			
+
+	
+</body>
+</html>

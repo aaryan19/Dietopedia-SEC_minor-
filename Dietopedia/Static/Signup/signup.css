@@ -1,0 +1,29 @@
+*{
+    color:white;
+}
+.bg{
+    background: url(1.jpg) center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeats;
+}
+.form-container{
+    border-radius: 20px;
+    padding: 30px 30px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    -webkit-box-shadow: 1px 4px 24px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 24px 12px rgba(0,0,0,0.75);
+    box-shadow: 1px 4px 24px 12px rgba(0,0,0,0.75);
+}
+.names{
+    float: left;
+}
+.aftername{
+    margin-left: 15px; 
+    margin-right: 15px;
+}
+.row{
+    width: auto;
+}
+
