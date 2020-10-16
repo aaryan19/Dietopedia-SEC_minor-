@@ -6,7 +6,16 @@ url = 'https://api.edamam.com/api/food-database/v2/parser?nutrition-type=logging
 
 response = requests.request("GET", url)
 food=response.json()
-print(food.text)
+for i in range(3,5):
+    name=food['hints'][i]['food']['label'] #first name
+    image=food['hints'][i]['food']['image']
+    energy=food['hints'][i]['food']['nutrients']['ENERC_KCAL']
+    protien=food['hints'][i]['food']['nutrients']['PROCNT']
+    fat=food['hints'][i]['food']['nutrients']['FAT']
+    category=food['hints'][i]['food']['categoryLabel']
+    ingredients=food['hints'][i]['food']['foodContentsLabel']
+
+
 
 
 response = requests.request("GET", url)

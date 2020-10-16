@@ -54,7 +54,7 @@
 				margin-top: -2%;
 				margin-left: -1%;
 				margin-bottom: -17px;
-				" class="col-md-6 col-sm-4  hidden-xs">
+				" class="col-md-6 col-sm-4  hidden-xs" style="height:118px">
 
 					<ul class="list-inline links-list pull-right">
 						
@@ -62,7 +62,7 @@
 						<div>
 							
 							<div class="box12">
-								<a class="name" href="#">Name@gmail.com</a>
+								<a class="name" href="#">{{user.email}}</a>
 							</div>
 							<div class="box12" style="margin-top: 11px;">
 								<a class="firstline" href="#">ITEM 1</a>
@@ -71,14 +71,9 @@
 							</div>
 	
 							<div class="box3">
-								<form>
-									<input style="margin-left: -199%;" class="search" type="search"
-										placeholder="Search">
-									<input class="searchbutton" type="submit" name="search" value="  ">
-									<i class="fa fa-search"></i>
-								</form>
+								
 							</div>
-							<div class="box4">
+							<div class="box4" style="margin-top: 8%;">
 								<a class="secondline" href="#">ITEM 4</a>
 								<a class="secondline" href="#">ITEM 5</a>
 								<a class="secondline" href="#">ITEM 6</a>
@@ -107,7 +102,7 @@
 						<form role="form" id="add_event_form">
 
 							<div class="input-group minimal">
-								<input type="text" class="form-control" placeholder="Add Food" />
+								<input type="text" class="form-control" placeholder="Search Food" />
 
 								<div class="input-group-addon">
 									<i class="entypo-pencil"></i>
@@ -124,42 +119,18 @@
 						<p>CREATE YOUR MEAL PLANS</p>
 
 						<li>
-							<a href="#">BREAKFAST</a>
+							<a href="#">
+								
+								<img src="{{image}}" style="height: 50px;margin-left: 76%;">	
+								<h2 style="font-size: 22px;">{{name}}</h2>
+								<p>Energy:{{energy}} Cals</p>
+								<p>Protien:{{protien}}</p>
+							</a>
 						</li>
 						<li>
 							<a href="#" class="color-blue" data-event-class="color-blue">Bread & jam</a>
 						</li>
-						<li>
-							<a href="#" class="color-orange" data-event-class="color-orange">Egg and chickpeas</a>
-						</li>
-						<li>
-							<a href="#" class="color-red" data-event-class="color-red">LUNCH</a>
-						</li>
-						<li>
-							<a href="#" class="color-blue" data-event-class="color-blue">Veg momo</a>
-						</li>
-						<li>
-
-							<a href="#" class="color-orange" data-event-class="color-orange">Chowmein</a>
-						</li>
-						</li>
-						<li>
-
-							<a href="#" class="color-red" data-event-class="color-red">DINNER</a>
-						</li>
-						</li>
-						<li>
-
-							<a href="#" class="color-blue" data-event-class="color-blue">Khana set</a>
-						</li>
-						</li>
-						<li>
-
-							<a href="#" class="color-orange" data-event-class="color-orange">Roti set</a>
-						</li>
-
-
-
+						
 
 
 

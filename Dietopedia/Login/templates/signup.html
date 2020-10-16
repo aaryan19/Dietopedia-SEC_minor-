@@ -23,12 +23,12 @@
                      <center><h2>SIGN UP</h2></center>
                     <div class="form-group">
                     <div class="col-md-6 col-sm-6 col-xs-2 names">
-                        <label for="fname">First Name</label>
-                        <input type="text" class="form-control" name="fname" placeholder="First Name">
+                        <label for="uname">Username</label>
+                        <input type="text" class="form-control" name="uname" placeholder="Username">
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-2 names">
-                        <label for="lname">Last Name</label>
-                        <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                        <label for="fname">First name</label>
+                        <input type="text" class="form-control" name="fname" placeholder="First Name">
                     </div>
                 </div>
                 <div class="form-group" style="margin-top:90px;">
@@ -67,6 +67,11 @@
                     <input type="checkbox" name="check" value="1"> I AGREE TO THE TERMS & CONDITIONS...
                     </center>
                 </div>
+                {% for messages in messages %}
+               =
+                    <h2> {messages}</h2>
+                {% endfor %}
+                
                 <div class="form-group aftername">
                     <input type="submit" class="btn btn-success btn-block" >
                 </div>

@@ -5,19 +5,18 @@ from .models import Customers
 # Create your views here.
 
 def SignUp(request):
+
     if  request.method== 'POST':
-        First_Name= request.POST["fname"]
-        Last_Name=request.POST["lname"]
+        Username= request.POST["uname"]
+        First_Name=request.POST["fname"]
         Email= request.POST["email"]
         Password=request.POST["password"]
         CPassword=request.POST["cpassword"]
         Gender=request.POST["gender"]
         Age=request.POST["age"]
         
-        
-      
         if Password==CPassword:
-            user=User.objects.create_user(username=First_Name,first_name=First_Name,last_name=Last_Name,password=Password,email=Email)
+            user=User.objects.create_user(username=Username,first_name=First_Name,password=Password,email=Email)
             user.save()   
             newextended= Customers(Gender=Gender,Age=Age,user=user)
             newextended.save()
@@ -44,3 +43,7 @@ def SignIn(request):
                 return (redirect('/log/signin'))
         else:
          return render(request,"signin.html",{})    
+
+def Logout(request):
+    auth.logout(request)
+    return redirect("/")

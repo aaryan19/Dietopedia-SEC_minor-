@@ -149,8 +149,8 @@
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
 		
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="{% static 'Website_all/assets/images/thumb-1@2x.png' %}" alt="" class="img-circle" width="44" />
-							Ram Bahadur
+							<img src="{{user.customers.ProfilePic.url}}" alt="" class="img-circle" width="44" />
+							{{user.first_name}}
 						</a>
 		
 						<ul class="dropdown-menu">
@@ -346,7 +346,7 @@
 					
 		
 					<li>
-						<a href="extra-login.html">
+						<a href="Logout">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>

@@ -1,0 +1,430 @@
+@font-face {
+    font-family: varela;
+    src: url(VarelaRound-Regular.ttf);
+  }
+  
+@font-face {
+ font-family: tisa sans;
+  src: url(TisaSansPro-Light.ttf);
+} 
+
+body,
+html{
+  padding: 0%;
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+  background: url(high.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.haree{
+    
+  font-family: varela;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+#lahai{
+  position: absolute;
+  width: 71px;
+  height: 31px;
+  left: 1440px;
+  top: 14px;
+  
+}
+#khai{
+  position: absolute;
+  width: 71px;
+  height: 31px;
+  left: 1360px;
+  top: 14px;
+  
+}
+
+.plan{
+  position: relative;
+  width: 300px;
+  height: 482px;
+  left: 536px;
+  top: 152px;
+  filter: drop-shadow(4px 4px 25px rgba(0, 0, 0, 0.67));
+  background: url(recipie11.png);
+  cursor: pointer;
+  z-index: 1;
+}
+.content {
+  width: 45%;
+  height: 70%;
+  background: #E9CD4F;
+  left: 2px;
+  top: -26px;
+  margin-left: 11%;
+  margin-top: 11%;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+#click{
+  visibility: hidden;
+}
+#click:checked ~ .content{
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+
+}
+#click:checked ~ .plan:hover{
+  transform: none;
+}
+#click:checked ~ .calculator:hover{
+  transform: none;
+}
+#clic{
+  visibility: hidden;
+}
+#clic:checked ~ .con{
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+
+}
+
+.calculator{
+  position: absolute;
+  width: 300px;
+  height: 482px;
+  left: 870px;
+  top: 154px;
+
+  background: url(calcu.png);
+  filter: drop-shadow(4px 4px 25px rgba(0, 0, 0, 0.67));
+}
+
+.titlee{
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: tisa sans;
+  font-weight: 10px;
+  font-size: 32px;
+  line-height: 62px;
+  text-align: center;
+  color: #181818;
+  transition: 1s;
+  background-position: center;
+
+
+}
+.plan > ul{
+  position: absolute;
+  width: 1px;
+  height: 309px;
+  left: 147.05px;
+  top: 80px;
+}
+.content > ul{
+  position: absolute;
+
+  left: 147.05px;
+  top: 80px;  
+}
+
+
+
+.calculator > ul{
+  position: absolute;
+  left: 198px;
+  top:-16px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: tisa sans;
+  font-weight: 10px;
+  font-size: 32px;
+  line-height: 62px;
+  text-align: center;
+  color: #181818;
+
+}
+
+.plan:hover {
+  transform: scale(1.05);
+  box-shadow: black;
+
+}
+
+.calculator:hover {
+  transform: scale(1.05);
+}
+
+.box{
+  position: absolute;
+  height: 280px;
+  width: 230px;
+  top: 60px;
+  left: 200px;
+  background-color: azure;
+}
+
+.box1{
+  position: absolute;
+  height: 280px;
+  width: 230px;
+  top: 60px;
+  left: 440px;
+  background-color: azure;
+}
+
+.con {
+  width: 36%;
+  height: 70%;
+  background: white;
+  left: 700px;
+  top: -25px;
+  margin-left: 11%;
+  margin-top: 11%;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  background: url(backcal.jpg) no-repeat center;
+  background-size: 134%;
+  background-position-y: top;
+}
+
+
+
+.header1 > ul {
+  position: absolute;
+  left: 440px;
+  top: -10px;
+  color: #FFFFFF;
+
+}
+
+.detail{
+  position: absolute;
+  left: 140px;
+  top: 160px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 160%;
+}
+/* .cube{
+  position: absolute;
+width: 70px;
+height: 28px;
+left: 120px;
+top: -1px;
+
+background: #376AED;
+border: 0.3px solid rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+border-radius: 30px;
+
+} 
+
+.cube1{
+  position: absolute;
+width: 138px;
+height: 28px;
+left: 120px;
+top: -1px;
+
+background: #F2F2F2;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+} */
+
+#gen
+{
+  position: absolute;
+  width: 130px;
+  height: 28px;
+  left: 140px;
+  top: -1px;
+  -webkit-appearance: none;
+  background-color: whitesmoke;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;  
+
+}
+
+.blen > p{
+  position: absolute;
+  left: 12px;
+  top: center;
+  font-size: 14px;
+  visibility: visible;
+
+}
+.blen2 > p{
+  position: absolute;
+  left: 12px;
+  top: center;
+  font-size: 14px;
+  visibility: visible;
+
+}
+/* #b2{
+  left: 212px;
+} */
+
+.blen{
+
+  position: absolute;
+  width: 70px;
+  height: 28px;
+  left: 140px;
+  top: -1px;
+  background-color: #376AED ;
+  border-radius: 30px;
+
+}
+
+/* #gen{
+  visibility: hidden;
+} */
+.blen2{
+  position: absolute;
+  width: 70px;
+  height: 28px;
+  left: 200px;
+  top: -1px;
+  background-color: #376AED ;
+  border-radius: 30px;
+  visibility: hidden;
+
+}
+
+#gen:checked ~ .blen2{
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+
+}
+
+#gen:checked ~ .blen{
+  visibility: hidden;
+}
+
+
+.fumm{
+  height: 40%;
+  width: 40%;
+  margin: 200px;
+  left: 100px;
+  top: 20px;
+}
+
+.ageee{
+  position: absolute;
+  width: 75px;
+  height: 26px;
+  margin-left: 5%;
+
+  background: #F2F2F2;
+  
+  border-radius: 20px;
+}
+.weiko{
+  position: absolute;
+  width: 75px;
+  height: 26px;
+  margin-left: 5%;
+
+  background: #F2F2F2;
+
+  border-radius: 20px;
+}
+.heig{
+  position: absolute;
+  width: 75px;
+  height: 26px;
+  margin-left: 6%;
+
+  background: #F2F2F2;
+
+  border-radius: 20px;
+
+}
+.butto{
+  position: absolute;
+  width: 125px;
+  height: 32px;
+  margin-top: 10%;
+  left: 290px;
+
+
+  background: #376AED;
+  border: 0.3px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+/* .cube2{
+  position: absolute;
+width: 56px;
+height: 26px;
+left: 120px;
+top: 46px;
+
+background: #F2F2F2;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+border-radius: 20px;
+}
+.cube3{
+  position: absolute;
+width: 76px;
+height: 26px;
+left: 140px;
+top: 90px;
+
+background: #F2F2F2;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+border-radius: 20px;
+}
+
+.cube4{
+  position: absolute;
+  width: 76px;
+  height: 26px;
+  left: 140px;
+  top: 136px;
+  
+  background: #F2F2F2;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+
+}
+.cube2 > p{
+  position: relative;
+  left: 10px;
+  top: -2px;
+  
+ 
+}
+
+.cube3 > p{
+  position: relative;
+  left: 28px;
+  top: -2px;
+  
+ 
+}
+.cube4 > p{
+  position: relative;
+  left: 26px;
+  top: -2px;
+  
+ 
+} */
