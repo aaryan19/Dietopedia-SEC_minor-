@@ -1,14 +1,13 @@
 from django.db import models
-from django import forms
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Customers(models.Model):
-    First_Name= models.CharField(max_length=20)
-    Last_Name=models.CharField(max_length=20)
+    user=models.OneToOneField(User,on_delete=models.CASCADE,default=None)
     Gender=models.CharField(max_length=20)
     Age=models.IntegerField()
-    Email= models.EmailField(max_length=70,blank=False , unique= True)
-    Password=models.CharField(max_length=20,blank=False,default="hello")
-    ConfirmPassword=models.CharField(max_length=20,blank=False,default="hello")
+    Calories=models.IntegerField(default=1200)
+    Email= models.EmailField(max_length=70,blank=False , unique= True,default="test@gmail.com")
+    Address=models.CharField(max_length=30,default='Nepal',)
     ProfilePic=models.ImageField(blank=True,null=True)
 
