@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Dietopedia',
         'USER': 'postgres',
-        'PASSWORD': 'shaurabh1234',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost'
 
     }

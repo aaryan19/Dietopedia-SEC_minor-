@@ -12,6 +12,7 @@
 	
 
 	<title>Calculator/BMI</title>
+	<script src="{% static 'bmi.js'%}"></script>
 	
 	<link rel="stylesheet" href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
 	<link rel="stylesheet" href="{% static 'Website_all/assets/css/font-icons/entypo/css/entypo.css' %}">
@@ -151,8 +152,8 @@
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
 		
 						<a href="Profile" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="{{user.customers.ProfilePic.url}}" alt="" class="img-circle" width="44" />
-							{{user.first_name}}
+							<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
+							Ram Bahadur
 						</a>
 		
 						<ul class="dropdown-menu">
@@ -356,7 +357,7 @@
 					
 		
 					<li>
-						<a href="Logout">
+						<a href="extra-login.html">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>
@@ -447,13 +448,17 @@
 
 							
 						</div>
+
+			
+	
 		
 						<div class="panel-body">
 		
 								
-							<div class="row">
+							<div class="row" id="myRange">
 								<div class="col-md-7" style="margin-left: 40%;">
-									<div class="slider slider-green" data-vertical="1"  data-postfix="cm" data-min="0" data-max="1800" data-value="465"></div>
+									<div class="slider slider-green"  input data-vertical="1"  data-postfix="cm" data-min="0" data-max="1800" data-value="465" ></div>
+									<p>height: <span id="height"></span></p>
 								</div>
 								
 							</div>
@@ -472,7 +477,8 @@
 								
 							<div class="row">
 								<div class="col-md-7" style="margin-left: 60%;margin-top: 22%;">
-									<div class="slider slider-green" data-vertical="1"  data-postfix="kg" data-min="0" data-max="300" data-value="465"></div>
+									<div class="slider slider-green" input data-vertical="1"  data-postfix="kg" data-min="0" data-max="300" data-value="465"></div>
+									<p>weight: <span id="weight"></span></p>
 								</div>
 								
 							</div>
@@ -480,7 +486,7 @@
 						</div>
 						
 					</div>
-					
+				
 		
 					<div class="tile-right">
 		
@@ -490,13 +496,50 @@
 		
 				</div>
 			</div>
+			<style media="screen">
+			#w, #h{
+				color: #222f3e;
+				text-align: left;
+				font-size: 20px;
+				font-weight: 200;
+				outline: none;
+				border: none;
+				background: none;
+				border-bottom: 1px solid #341f97;
+				width: 200px;
+			}
+				#w:focus, #h:focus{
+					border-bottom: 2px solid #341f97;
+					width: 300px;
+					transition: 0.5s;
+				}
+				#result{
+					color: #341f97
+				
+				}
 
+				</style>
+				<script type="text/javascript">
+					function BMI() {
+						var h =document.getElementById('h').value;
+						var w=document.getElementById('w').value;
+						var bmi=w/(h/100*h/100);
+						var bmio=(bmi.toFixed(2));
 			
-		</div>
-		<button type="button" class="btn btn-primary btn-icon icon-left" style="margin-left: 43%;">
+						document.getElementById("result").innerHTML="Your BMI is " + bmio;
+					}
+				</script>
+
+				<input type="text" id="h">
+				<p class="text">Height (in cm)</p>
+				<input type="text" id="w">
+				<p class="text">Weight (in kg)</p>
+				<p id="result"></p>
+		<button type="button" class="btn btn-primary btn-icon icon-left" onClick="BMI()" style="margin-left: 43%;">
 			Calculate BMI
 			<i class="entypo-mail"></i>
 		</button>
+		
 
 	
 	

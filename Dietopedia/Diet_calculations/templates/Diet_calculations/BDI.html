@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,13 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="BDI" />
+	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	
 
-	<title>BDI</title>
+	<title>Calculator/BDI</title>
+	<script src="{% static 'bdi.js'%}"></script>
 	
-
 	<link rel="stylesheet" href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
 	<link rel="stylesheet" href="{% static 'Website_all/assets/css/font-icons/entypo/css/entypo.css' %}">
 	<link rel="stylesheet" href="{% static '//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' %}">
@@ -23,7 +24,7 @@
 	<link rel="stylesheet" href="{% static 'Website_all/assets/css/custom.css' %}">
 	<link rel="stylesheet" href="{% static 'Website_all/assets/css/skins/green.css' %}">
 
-	<script src="{% static 'Website_all/assets/js/jquery-1.11.3.min.js' %}"></script>
+	<script src='{% static "Website_all/assets/js/jquery-1.11.3.min.js" %}'></script>
 
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	
@@ -35,7 +36,8 @@
 
 
 </head>
-<body  class="page-body  skin-green" data-url="http://neon.dev" >
+
+<body  class="page-body  skin-green" data-url="{% static 'http://neon.dev' %}" >
 
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 		
@@ -48,10 +50,11 @@
 
 				<!-- logo -->
 				<div class="logo ">
-					<a href="BDI">
+					<a href="">
 						<h1 style=" font-size:300% ; color:white ",>Dietopedia</h1>
 					</a>
 				</div>
+				
 
 				<!-- logo collapse icon -->
 				<div class="sidebar-collapse" style="margin-left: 10px;">
@@ -74,42 +77,36 @@
 			<ul id="main-menu" class="main-menu" style="margin-top: 150px;">
 				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
-				<li class=" has-sub">
-					<a href="index">
+				<li class="active opened active has-sub">
+					<a href="BMI">
 						<i class="entypo-calendar"></i>
 				
 						<span class="title">Calculator</span>	
 					</a>
 					<ul class="visible">
-						<li class="sub">
+						<li class="active">
 							<a href="BMI">
 								<span class="title">BMI</span>
 							</a>
 						</li>
-					
-						
-						
-					</ul>
-					<ul class="visible">
 						<li >
 							<a href="BDI">
-								<span class="active">BDI</span>
+								<span class="title">BDI</span>
 							</a>
 						</li>
+						
+						
 					</ul>
-
-
-
-				
 				</li>
 				<li class="has-sub">
 					<a href="History">
-						<i class="title "></i>
+						<i class="entypo-layout"></i>
 						<span class="title">History</span>
 					</a>
 					
 				</li>
-				
+
+					
 				<li class="has-sub">
 					<a href="../Dish_Recomendation">
 						<i class="entypo-newspaper"></i>
@@ -118,6 +115,7 @@
 					
 				</li>
 				
+				
 				<li class="has-sub">
 					<a href="../profile">
 						<i class="entypo-newspaper"></i>
@@ -125,7 +123,7 @@
 					</a>
 					
 				</li>
-			
+				
 				<li class="has-sub">
 					<a href="Logout">
 						<i class="entypo-doc-text"></i>
@@ -153,9 +151,9 @@
 					<!-- Profile Info -->
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
 		
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="{{user.customers.ProfilePic.url}}" alt="" class="img-circle" width="44" />
-							{{user.first_name}}
+						<a href="Profile" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
+							Ram Bahadur
 						</a>
 		
 						<ul class="dropdown-menu">
@@ -181,7 +179,6 @@
 							</li>
 		
 							
-									
 						</ul>
 					</li>
 		
@@ -318,7 +315,7 @@
 											</span>
 										</a>
 									</li>
-									
+								
 									
 									<li>
 										<a href="#">
@@ -360,7 +357,7 @@
 					
 		
 					<li>
-						<a href="Logout">
+						<a href="extra-login.html">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>
@@ -382,7 +379,7 @@
 					<div class="tile-header">
 						<i class="entypo-list"></i>Basic Settings
 					</div>
-					<h9  style="color: white;font-size: 0.4cm;margin-left: 3%;">Fill the following forms</h9>
+					<h9  style="color: white;font-size: 0.3cm;margin-left: 4%;">Fill the following forms</h9>
 		
 					<div class="tile-content">
 		
@@ -399,7 +396,7 @@
 		
 							<li>
 								<div class="checkbox checkbox-replace color-white">
-									<input type="checkbox" id="task-2"  />
+									<input type="checkbox" id="task-2" />
 									<label>Female</label>
 								</div>
 							</li>
@@ -451,13 +448,17 @@
 
 							
 						</div>
+
+			
+	
 		
 						<div class="panel-body">
 		
 								
-							<div class="row">
+							<div class="row" id="myRange">
 								<div class="col-md-7" style="margin-left: 40%;">
-									<div class="slider slider-green" data-vertical="1"  data-postfix="cm" data-min="0" data-max="1800" data-value="465"></div>
+									<div class="slider slider-green"  input data-vertical="1"  data-postfix="cm" data-min="0" data-max="1800" data-value="465" ></div>
+									<p>height: <span id="height"></span></p>
 								</div>
 								
 							</div>
@@ -476,7 +477,8 @@
 								
 							<div class="row">
 								<div class="col-md-7" style="margin-left: 60%;margin-top: 22%;">
-									<div class="slider slider-green" data-vertical="1"  data-postfix="kg" data-min="0" data-max="300" data-value="465"></div>
+									<div class="slider slider-green" input data-vertical="1"  data-postfix="kg" data-min="0" data-max="300" data-value="465"></div>
+									<p>weight: <span id="weight"></span></p>
 								</div>
 								
 							</div>
@@ -484,7 +486,7 @@
 						</div>
 						
 					</div>
-					
+				
 		
 					<div class="tile-right">
 		
@@ -494,32 +496,78 @@
 		
 				</div>
 			</div>
+			<style media="screen">
+			#w, #h,#a,#b{
+				color: #222f3e;
+				text-align: left;
+				font-size: 20px;
+				font-weight: 200;
+				outline: none;
+				border: none;
+				background: none;
+				border-bottom: 1px solid #341f97;
+				width: 200px;
+			}
+				#w:focus, #h:focus,#a:focus,#b:focus{
+					border-bottom: 2px solid #341f97;
+					width: 300px;
+					transition: 0.5s;
+				}
+				#result{
+					color: #341f97
+				
+				}
 
+				</style>
+				<script type="text/javascript">
+					function BDI(){
+						var h =document.getElementById('h').value;
+						var w=document.getElementById('w').value;
+						var a=document.getElementById('a').value;
+						var b=document.getElementById('b').value;
+						var bdi= w*(a + b)/(h*h*h);
+						var bdio=(bdi.toFixed(2));
 			
-		</div>
-		<button type="button" class="btn btn-primary btn-icon icon-left" style="margin-left: 43%;">
+						document.getElementById("result").innerHTML="Your BDI is " + bdio;
+					}
+				</script>
+
+				<input type="text" id="h">
+				<p class="text">Height (in cm)</p>
+				<input type="text" id="w">
+				<p class="text">Weight (in kg)</p>
+				<input type="text" id="a">
+				<p class="text">Circumference of the waist(in cm)</p>
+				<input type="text" id="b">
+				<p class="text">Circumference of the butt (in cm)</p>
+				<p id="result"></p>
+		<button type="button" class="btn btn-primary btn-icon icon-left" onClick="BDI()" style="margin-left: 43%;">
 			Calculate BDI
 			<i class="entypo-mail"></i>
 		</button>
+		
 
 	
 	
 		
-<!-- Bottom scripts (common) -->
-<script src="{% static 'Website_all/assets/js/gsap/TweenMax.min.js' %}"></script>
-<script src="{% static 'Website_all/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js' %}"></script>
-<script src="{% static 'Website_all/assets/js/bootstrap.js' %}"></script>
-<script src="{% static 'Website_all/assets/js/joinable.js' %}"></script>
-<script src="{% static 'Website_all/assets/js/resizeable.js' %}"></script>
-<script src="{% static 'Website_all/assets/js/neon-api.js' %}"></script>
-<script src="{% static 'Website_all/assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+
+	
+
+	<!-- Bottom scripts (common) -->
+	<script src="{% static 'Website_all/assets/js/gsap/TweenMax.min.js' %}"></script>
+	<script src="{% static 'Website_all/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js' %}"></script>
+	<script src="{% static 'Website_all/assets/js/bootstrap.js' %}"></script>
+	<script src="{% static 'Website_all/assets/js/joinable.js' %}"></script>
+	<script src="{% static 'Website_all/assets/js/resizeable.js' %}"></script>
+	<script src="{% static 'Website_all/assets/js/neon-api.js' %}"></script>
+	<script src="{% static 'Website_all/assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
 
 
-<!-- JavaScripts initializations and stuff -->
-<script src="{% static 'Website_all/assets/js/neon-custom.js' %}"></script>
+	<!-- JavaScripts initializations and stuff -->
+	<script src="{% static 'Website_all/assets/js/neon-custom.js' %}"></script>
 
 
-
+	
 
 </body>
 </html>
