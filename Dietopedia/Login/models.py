@@ -7,7 +7,6 @@ class Customers(models.Model):
     Gender=models.CharField(max_length=20)
     Age=models.IntegerField()
     Calories=models.IntegerField(default=1200)
-    Email= models.EmailField(max_length=70,blank=False , unique= True)
     Address=models.CharField(max_length=30,default='Nepal',)
-    ProfilePic=models.ImageField(blank=True,null=True)
+    ProfilePic=models.ImageField(blank=True,null=True,default='/9.png')
 
