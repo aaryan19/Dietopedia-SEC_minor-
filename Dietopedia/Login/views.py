@@ -27,8 +27,6 @@ def SignUp(request):
                 user.save()   
                 newextended= Customers(Gender=Gender,Age=Age,user=user)
                 newextended.save()
-                print("User Created")
-            
                 return(redirect('/log/signin/'))
         else:
             messages.info(request,"Password not matching")

@@ -12,9 +12,10 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	<title>Dietopedia</title>
-	
 
-	<link rel="stylesheet" href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
+
+	<link rel="stylesheet"
+		href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
 	<link rel="stylesheet" href="{% static 'Website_all/assets/css/font-icons/entypo/css/entypo.css' %}">
 	<link rel="stylesheet" href="{% static '//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic'%}">
 	<link rel="stylesheet" href="{% static 'Website_all/assets/css/bootstrap.css' %}">
@@ -37,7 +38,7 @@
 </head>
 {% load static %}
 
-	
+
 <body class="page-body" data-url="{ % static 'http://neon.dev' %}">
 
 	<div class="page-container">
@@ -46,7 +47,10 @@
 
 		<div class="main-content">
 
+			
+
 			<div class="row">
+				
 				<!-- Raw Links -->
 				<div style="width: 102%;
 				background-color: green;
@@ -57,29 +61,37 @@
 				" class="col-md-6 col-sm-4  hidden-xs" style="height:118px">
 
 					<ul class="list-inline links-list pull-right">
-						
+
 						<nav>
-						<div>
-							
-							<div class="box12">
-								<a class="name" href="#">{{user.email}}</a>
-							</div>
-							<div class="box12" style="margin-top: 11px;">
-								<a class="firstline" href="#">ITEM 1</a>
-								<a class="firstline" href="#">ITEM 2</a>
-								<a class="firstline" href="#">ITEM 3</a>
-							</div>
-	
-							<div class="box3">
+							<div>
 								
+								
+									<a class="name" href="#">{{user.email}}</a>
+								</div>
+								<div class="box12" style="margin-top: 11px;">
+									<a class="firstline" href="./Profile">Profile</a>
+									<a class="firstline" href="../calculator/BMI">Calculations</a>
+									<a class="firstline" href="Logout">Logout</a>
+								</div>
+								<div class="box12">
+									<div class="logo ">
+										<a href="BDI">
+											<p style="font-size: 440%;
+											color: white;
+											margin-left: -155%;",>Dietopedia</p>
+										</a>
+									</div>
+
+								<div class="box3">
+
+								</div>
+								<div class="box4" style="margin-top: -10%;">
+									<a class="secondline" href="#">ITEM 4</a>
+									<a class="secondline" href="#">ITEM 5</a>
+									<a class="secondline" href="#">ITEM 6</a>
+								</div>
+
 							</div>
-							<div class="box4" style="margin-top: 8%;">
-								<a class="secondline" href="#">ITEM 4</a>
-								<a class="secondline" href="#">ITEM 5</a>
-								<a class="secondline" href="#">ITEM 6</a>
-							</div>
-							
-						</div>
 						</nav>
 
 
@@ -115,22 +127,24 @@
 
 
 					<!-- Events List -->
+
 					<ul class="events-list" id="draggable_events">
 						<p>CREATE YOUR MEAL PLANS</p>
 
 						<li>
 							<a href="#">
+
 								
-								<img src="{{image}}" style="height: 50px;margin-left: 76%;">	
 								<h2 style="font-size: 22px;">{{name}}</h2>
-								<p>Energy:{{energy}} Cals</p>
-								<p>Protien:{{protien}}</p>
+								<p>Calories:{{cal}} </p>
+								<p>Fats:{{fats}}</p>
+								<p>Servings:{{serving}}</p>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="color-blue" data-event-class="color-blue">Bread & jam</a>
 						</li>
-						
+
 
 
 
