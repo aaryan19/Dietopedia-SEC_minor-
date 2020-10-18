@@ -7,22 +7,27 @@ from .models import Customers
 def SignUp(request):
 
     if  request.method== 'POST':
-        Username= request.POST["uname"]
+        username= request.POST["uname"]
         First_Name=request.POST["fname"]
-        Email= request.POST["email"]
+        email= request.POST["email"]
         Password=request.POST["password"]
         CPassword=request.POST["cpassword"]
         Gender=request.POST["gender"]
         Age=request.POST["age"]
         
         if Password==CPassword:
-            user=User.objects.create_user(username=Username,first_name=First_Name,password=Password,email=Email)
-            user.save()   
-            newextended= Customers(Gender=Gender,Age=Age,user=user)
-            newextended.save()
-            print("User Created")
-           
-            return(redirect('/log/signin/'))
+            if User.objects.filter(username=username).exists():
+                messages.info(request,"username Exists")
+                return(redirect('/log/signup/'))
+            elif User.objects.filter(email=email).exists():
+                messages.info(request,"Email already Exists")
+                return(redirect('/log/signup/'))
+            else:
+                user=User.objects.create_user(username=username,first_name=First_Name,password=Password,email=email,)
+                user.save()   
+                newextended= Customers(Gender=Gender,Age=Age,user=user)
+                newextended.save()
+                return(redirect('/log/signin/'))
         else:
             messages.info(request,"Password not matching")
             return(redirect('/log/signup/'))
