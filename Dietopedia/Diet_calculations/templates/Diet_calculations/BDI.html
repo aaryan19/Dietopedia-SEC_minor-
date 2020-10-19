@@ -108,12 +108,12 @@
 
 
 					</li>
-					<li class="has-sub">
+					<li  class="has-sub">
 						<a href="History">
-							<i class="title "></i>
+							<i class="entypo-layout"></i>
 							<span class="title">History</span>
 						</a>
-
+						
 					</li>
 
 					<li class="has-sub">
@@ -245,8 +245,11 @@
 						<form class="form-container" action="" method="POST">
 								{% csrf_token %}
 
-							<input type="number" id="height" name="height" style='-moz-appearance: textfield;'>
-							<p class="number">Height (in cm)</p>
+
+
+							<input type="number" id='heightft' name="heightft" size="1" maxlength="1"style='-moz-appearance: textfield;' c> Ft         
+							<input type="number" id="heightinc"  name="heightinc"  size="2" maxlength="2"style='-moz-appearance: textfield;'> Inc
+							<p class="number">Height (in ft and inc)</p>
 							<input type="number" id="weight"name="weight"style='-moz-appearance: textfield;'>
 							<p class="number" >Weight (in kg)</p>
 							<input type="number" id="waist"name="waist"style='-moz-appearance: textfield;'>
@@ -269,47 +272,13 @@
 						<i class="entypo-mail"></i>
 					</button>
 				</form>
-
-
-					<script type="text/javascript">
-						function BDI(){
-							
-							var height =document.getElementById('h').value;
-							var weight=document.getElementById('w').value;
-							var waist=document.getElementById('a').value;
-							var age=document.getElementById('age').value||{{user.customers.Age}};
-							var bdi= (weight/height^2)*waist;
-							var bdio=(bdi.toFixed(2));
-							document.getElementById("result").innerHTML="Your BDI is " + bdio;
-							if (age>19){	
-								console.log(weight)	
-								console.log(bdio)	
-								if ((weight<56.2454539)&&(bdio<18.5)){
-									document.getElementById("test").innerHTML="Underweight"
-									}	
-								else if ((weight<56.2454539)&&(bdio>18.5)){
-									document.getElementById("test").innerHTML="Underweight"
-									}	
-								else if ((76.2035<weight>56.699)&&(24.9<bdio>18.5)){
-									document.getElementById("message").innerHTML=" Normal or Healthy Weight"
-									}		
-								else if ((202 <weight>76.657)&&(29.9<bdio<25)){
-									document.getElementById("message").innerHTML="Overweight"
-									}		
-								else{
-									document.getElementById("message").innerHTML="Obese	"
-								}
-							}
-						
-	
-							
-						}
-					</script>
-
-
-
-
-
+			
+				<h1 style="margin-left: 44%;width: 200%;">The Previous  BDI was {{total}}{{bdi.BDI}}</h1>
+				<a href="/calculator/History">Click here for histories</a>
+				{% for message in messages %}
+				<h2 style="margin-left: 70%;width: 200%;color: red;">  {{message}}</h2>
+				
+				{% endfor %}
 					</button>
 
 					<!-- for height and weight -->
@@ -328,6 +297,20 @@
 							background: none;
 							border-bottom: 1px solid #009549;
 							width: 200px;
+						}
+						#heightft,
+						#heightinc
+
+						 {
+							color: white;
+							text-align: left;
+							font-size: 20px;
+							font-weight: 200;
+							outline: none;
+							border: none;
+							background: none;
+							border-bottom: 1px solid #009549;
+							width: 100px;
 						}
 
 						#w:focus,

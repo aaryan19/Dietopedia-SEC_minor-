@@ -15,11 +15,11 @@ response = requests.request("GET", url + search, headers=headers, params=queryst
     
 food=response.json()
 
-for i in range(0,2):
-    itemname=food['hits'][i]['fields']['item_name']
-    calories=food['hits'][i]['fields']['nf_calories']
-    fat=food['hits'][i]['fields']['nf_total_fat']
-    serving=food['hits'][i]['fields']['nf_serving_size_qty']
+# for i in range(0,2):
+#     itemname=food['hits'][i]['fields']['item_name']
+#     calories=food['hits'][i]['fields']['nf_calories']
+#     fat=food['hits'][i]['fields']['nf_total_fat']
+#     serving=food['hits'][i]['fields']['nf_serving_size_qty']
 
 # print(itemname)
 # print(calories)

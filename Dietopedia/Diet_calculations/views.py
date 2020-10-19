@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
-from django.contrib import auth
+from django.contrib import auth,messages
 from django.contrib.auth.decorators import login_required
 from .models import CalculationsBMI,CalculationsBDI
 from django.contrib.auth.models import User
 from Login.models import Customers
+
 
 
 # Create your views here.
@@ -79,29 +80,76 @@ def BMR(request):
 @login_required(login_url='../log/signin')    
 def BDI(request):
     if  request.method== 'POST':
-        height =request.POST['height']
+        heightfet =request.POST['heightft']
+        heightin =request.POST['heightinc']
         weight=request.POST['weight']
         waist=request.POST['waist']
         butt=request.POST['butt']
-        if height =='' :
-            if weight =='':
-                if waist =='':
-                    if butt =='':
-                        return render(request,"Diet_calculations/BDI.html")
-       
-        
+
+        if (int(heightin)>11):
+            remainderinc= 12 % int(heightin)
+            heightinc2=remainderinc
+            heightft2=int(heightfet)+((int(heightin)-int(remainderinc))/12) 
         else:
-            BDI = float(waist) * (float(weight) + float(butt)) / float(height) * float(height) * float(height) 
-            user=request.user 
-            test=CalculationsBDI.objects.filter(user=user).last()
-            user=request.user
-            addbdi= CalculationsBDI(user=user,BDI=BDI)
-            addbdi.save() 
-            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
-             
+            HeightFeetConvert = int(heightfet) * 12
+            remainderinc=int(heightin)%12
+            height=HeightFeetConvert+remainderinc
+
+           
+        if 2<int(height)<213:   
+            if 15<int(weight)<200:
+                if 12<int(waist)<4000 :
+                    if 12<int(butt)<4000:
+                        BDI = (int(weight) * 703 * (int(waist) + int(butt)) )/ (int(height)*int(height)*int(height))
+                        user=request.user 
+                        test=CalculationsBDI.objects.filter(user=user).last()
+                        user=request.user
+                        addbdi= CalculationsBDI(user=user,BDI=BDI)
+                        addbdi.save() 
+                        if int(BDI)<5:
+                            messages.info(request,"Probably Dead and dried")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 10>int(BDI)>5:
+                            messages.info(request,"Near Death")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 10>int(BDI)>11.5:
+                            messages.info(request,"Unmoving skeleton")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 13.5>int(BDI)>11.5:
+                            messages.info(request,"Crawling bones")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 16>int(BDI)>13.5:
+                            messages.info(request,"Walking sticks")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 18.5>int(BDI)>16:
+                            messages.info(request,"Running fox")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 21.5>int(BDI)>18.5:
+                            messages.info(request,"Jogging coyote")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 25.2>int(BDI)>21.5:
+                            messages.info(request,"Gamboling pony")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+                        elif 25.2>int(BDI):
+                            messages.info(request,"Beyond human")
+                            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+                        
+        else:
+            messages.info(request,"Incorrect value")
+            return render(request,"Diet_calculations/BDI.html")
+           
     else:
         user=request.user 
         test=CalculationsBDI.objects.filter(user=user).last()
+        messages.info(request,"Enter value")
         return render(request,"Diet_calculations/BDI.html",{"bdi":test})
 
     

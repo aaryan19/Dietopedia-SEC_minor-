@@ -1,0 +1,83 @@
+
+
+<!-- Original:  Marat Rikelman (rikelman@bellsouth.net) -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+function mod(div,base) {
+return Math.round(div - (Math.floor(div/base)*base));
+}
+function calcBDI() {
+var w = document.BDI.weight.value * 1;
+var s = document.BDI.waist.value * 1;
+var b = document.BDI.butt.value * 1;
+var HeightFeetInt = document.BDI.htf.value * 1;
+var HeightInchesInt = document.BDI.hti.value * 1;
+HeightFeetConvert = HeightFeetInt * 12;
+h = HeightFeetConvert + HeightInchesInt;
+
+
+
+displayBDI = (Math.round((w * 703 * (s + b))/(h * h * h)));
+
+
+
+
+var rvalue = true;
+if ( (w <= 35) || (w >= 2000) || (s <= x|| (s >= 400)  || (h <= 48) || (h >= 120) ) {
+alert ("Invalid data.  Please check and re-enter!");
+rvalue = false;
+}
+
+if (rvalue) {
+if (HeightInchesInt > 11) {
+reminderinches = mod(HeightInchesInt,12);
+document.BDI.hti.value = reminderinches;
+document.BDI.htf.value = HeightFeetInt + 
+((HeightInchesInt - reminderinches)/12);
+document.BDI.answer.value = displayBDI;
+}
+
+if (displayBDI <5) 
+document.BDI.comment.value = "Probably Dead and dried";
+if (displayBDI >=5 && displayBDI <=10) 
+document.BDI.comment.value = "Near Death";
+if (displayBDI >=10 && displayBDI <=11.5) 
+document.BDI.comment.value = "Unmoving skeleton";
+if (displayBDI >=11.5 && displayBDI <=13.5) 
+document.BDI.comment.value = "Crawling bones";
+if (displayBDI >=13.5 && displayBDI <=16) 
+document.BDI.comment.value = "Walking sticks";
+if (displayBDI >=16 && displayBDI <=18.5) 
+document.BDI.comment.value = "Running fox";
+if (displayBDI >=18.5 && displayBDI <=21.5) 
+document.BDI.comment.value = "Jogging coyote";
+if (displayBDI >=21.5 && displayBDI <=25.2) 
+document.BDI.comment.value = "Gamboling pony";
+if (displayBDI >=25.2 && displayBDI <=29.6) 
+document.BDI.comment.value = "Ambling horse";
+if (displayBDI >=29.6 && displayBDI <=34.3) 
+document.BDI.comment.value = "Trudging bull ";
+if (displayBDI >=34.3 && displayBDI <=40) 
+document.BDI.comment.value = "Rolling barrel ";
+if (displayBDI >=40 && displayBDI <=47) 
+document.BDI.comment.value = "Moving tub";
+if (displayBDI >=47 && displayBDI <=55) 
+document.BDI.comment.value = "Waddling melon";
+if (displayBDI >=55 && displayBDI <=63) 
+document.BDI.comment.value = "Wambling paunch ";
+if (displayBDI >=63 && displayBDI <=74) 
+document.BDI.comment.value = "Cumbering enormity";
+if (displayBDI >=74 && displayBDI <=86) 
+document.BDI.comment.value = "Sitting titan";
+if (displayBDI >=86 && displayBDI <=99) 
+document.BDI.comment.value = "Beaching jellyfish";
+if (displayBDI >99) 
+document.BDI.comment.value = "Beyond human";
+document.BDI.answer.value = displayBDI; }
+return rvalue;
+}
+//  End -->
+
