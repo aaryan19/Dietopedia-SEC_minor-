@@ -75,14 +75,14 @@
 				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
 				<li class="has-sub">
-					<a href="BMI">
+					<a href="BMR">
 						<i class="entypo-calendar"></i>
 				
 						<span class="title">Calculator</span>	
 					</a>
 					<ul >
 						<li >
-							<a href="BMI">
+							<a href="BMR">
 								<span class="title">BMR</span>
 							</a>
 						</li>
@@ -176,161 +176,7 @@
 		
 				</ul>
 				
-				<ul class="user-info pull-left pull-right-xs pull-none-xsm">
-		
-					<!-- Raw Notifications -->
-					<li class="notifications dropdown">
-		
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-							<i class="entypo-attention"></i>
-							<span class="badge badge-info">6</span>
-						</a>
-		
-						<ul class="dropdown-menu">
-							<li class="top">
-								<p class="small">
-									<a href="#" class="pull-right">Mark all Read</a>
-									You have <strong>3</strong> new notifications.
-								</p>
-							</li>
-							
-							<li>
-								<ul class="dropdown-menu-list scroller">
-									<li class="unread notification-success">
-										<a href="#">
-											<i class="entypo-user-add pull-right"></i>
-											
-											<span class="line">
-												<strong>New user registered</strong>
-											</span>
-											
-											<span class="line small">
-												30 seconds ago
-											</span>
-										</a>
-									</li>
-									
-									<li class="unread notification-secondary">
-										<a href="#">
-											<i class="entypo-heart pull-right"></i>
-											
-											<span class="line">
-												<strong>Your calories level low</strong>
-											</span>
-											
-											<span class="line small">
-												2 minutes ago
-											</span>
-										</a>
-									</li>
-									
-									<li class="notification-primary">
-										<a href="#">
-											<i class="entypo-user pull-right"></i>
-											
-											<span class="line">
-												<strong>Privacy settings have been changed</strong>
-											</span>
-											
-											<span class="line small">
-												3 hours ago
-											</span>
-										</a>
-									</li>
-									
-									
-								</ul>
-							</li>
-							
-							<li class="external">
-								<a href="#">View all notifications</a>
-							</li>
-						</ul>
-		
-					</li>
-		
-					
-					<!-- Task Notifications -->
-					<li class="notifications dropdown">
-		
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-							<i class="entypo-list"></i>
-							<span class="badge badge-warning">1</span>
-						</a>
-		
-						<ul class="dropdown-menu">
-							<li class="top">
-								<p>Your Intakes</p>
-							</li>
-							
-							<li>
-								<ul class="dropdown-menu-list scroller">
-									<li>
-										<a href="#">
-											<span class="task">
-												<span class="desc">Protien</span>
-												<span class="percent">27%</span>
-											</span>
-										
-											<span class="progress">
-												<span style="width: 27%;" class="progress-bar progress-bar-success">
-													<span class="sr-only">27% Complete</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="task">
-												<span class="desc">Carbohydrates</span>
-												<span class="percent">83%</span>
-											</span>
-											
-											<span class="progress progress-striped">
-												<span style="width: 83%;" class="progress-bar progress-bar-danger">
-													<span class="sr-only">83% Complete</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="task">
-												<span class="desc">Fats</span>
-												<span class="percent">91%</span>
-											</span>
-											
-											<span class="progress">
-												<span style="width: 91%;" class="progress-bar progress-bar-success">
-													<span class="sr-only">91% Complete</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									
-									
-									<li>
-										<a href="#">
-											<span class="task">
-												<span class="desc">Total Progress</span>
-												<span class="percent">17%</span>
-											</span>
-											
-											<span class="progress progress-striped">
-												<span style="width: 17%;" class="progress-bar progress-bar-important">
-													<span class="sr-only">17% Complete</span>
-												</span>
-											</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							
-						</ul>
-		
-					</li>
-		
-				</ul>
+				
 		
 			</div>
 		
@@ -369,7 +215,7 @@
 		
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<div class="panel-title">History</div>
+					<div class="panel-title">BMR History</div>
 					
 					<div class="panel-options">
 							<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
@@ -381,38 +227,30 @@
 				<table class="table table-bordered table-responsive">
 					<thead>
 						<tr>
-							<th>#</th>
+							
 							<th>Name</th>
-							<th>Plans</th>
+							<th>BMI</th>
+							<th>Calories</th>
+							<th>Date and Time</th>
 							<th>Progress</th>
 						</tr>
 					</thead>
 					
+					{% for items in bmi %}
+					
 					<tbody>
 						<tr>
-							<td>1</td>
-							<td>Arlind@</td>
-							<td>Premium</td>
+							
+							<td>{{ user.first_name }}</td>
+							<td>{{ items.field }}</td>
+							<td>{{ items.BMR }}</td>
+							<td>{{ items.date }}</td>
 							<td>
 								<div class="progress">
-									<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="120" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-										
-									</div>
-								</div>
-							</td>
-						</tr>
-						
-						
-					</tbody>
-
-					<tbody>
-						<tr>
-							<td>2</td>
-							<td>Arvin5</td>
-							<td>Basic</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								
+									<div class="progress-bar progress-bar-info " role="progressbar" aria-valuemin="0" aria-valuemax="3000" style="width: 60%;background-color:#009549;">
+							
+								
 										
 									</div>
 								</div>
@@ -420,24 +258,60 @@
 						</tr>
 						
 					</tbody>
-					<tbody>
-						<tr>
-							<td>3</td>
-							<td>Bisesh</td>
-							<td>Basic</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-										
-									</div>
-								</div>
-							</td>
-						</tr>
-						
-					</tbody>
-
+					{% endfor %}
+					
 				</table>
 			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="panel-title">BMI History</div>
+					
+					<div class="panel-options">
+							<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+						<a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+						<a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+					</div>
+				</div>
+					
+				<table class="table table-bordered table-responsive">
+					<thead>
+						<tr>
+							
+							<th>Name</th>
+							<th>BMR</th>
+							<th>Calories</th>
+							<th>Date and Time</th>
+							<th>Progress</th>
+						</tr>
+					</thead>
+					
+					
+					{% for datas in bdi %}
+					<tbody>
+						<tr>
+							
+							<td>{{ user.first_name }}</td>
+							<td>{{ datas.field }}</td>
+							<td>{{ datas.BDI }}</td>
+							<td>{{ datas.date }}</td>
+							<td>
+								<div class="progress">
+								
+									<div class="progress-bar progress-bar-info " role="progressbar" aria-valuemin="0" aria-valuemax="3000" style="width: 60%;background-color:#009549;">
+							
+								
+										
+									</div>
+								</div>
+							</td>
+						</tr>
+						
+					</tbody>
+					
+					{% endfor %}
+				</table>
+			</div>
+			
 			
 			
 		</div>
