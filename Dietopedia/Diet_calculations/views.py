@@ -13,12 +13,10 @@ def BMR(request):
      if  request.method== 'POST':
         height =request.POST['height']
         weight=request.POST['weight']
-        user=request.user
         age =request.POST['age']
         Gender=request.POST['gender']
         exer =request.POST['exercise']
         if height =='' :
-            print(age)
             if weight =='':
                 if age =='':
                  return render(request,"Diet_calculations/BMR.html")
@@ -39,11 +37,13 @@ def BMR(request):
                             
                 elif (exer == '5'):
                     bdiwithexercise= bmr*1.9
-                
+                user=request.user 
+                test=CalculationsBMI.objects.filter(user=user).last()
                 user=request.user
                 addbdio= CalculationsBMI(user=user,BMR=bdiwithexercise)
                 addbdio.save()
-                return render(request,"Diet_calculations/BMR.html")
+                return render(request,"Diet_calculations/BMR.html",{"test":test})
+                
             else:
                 bmr =655 + ( 4.35 * float(weight)) + ( 4.7 * float(height) ) - ( 4.7 * float(age))
                 if (exer== '1'):
@@ -135,7 +135,7 @@ def BDI(request):
                             return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
                         
                         elif 25.2>int(BDI)>21.5:
-                            messages.info(request,"Gamboling pony")
+                            messages.info(request,"Gamboling pony?fit")
                             return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
                         
                         elif 25.2>int(BDI):
