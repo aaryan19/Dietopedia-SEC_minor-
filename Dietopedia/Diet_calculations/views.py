@@ -78,7 +78,33 @@ def BMR(request):
     
 @login_required(login_url='../log/signin')    
 def BDI(request):
-    return render(request,"Diet_calculations/BDI.html")
+    if  request.method== 'POST':
+        height =request.POST['height']
+        weight=request.POST['weight']
+        waist=request.POST['waist']
+        butt=request.POST['butt']
+        if height =='' :
+            if weight =='':
+                if waist =='':
+                    if butt =='':
+                        return render(request,"Diet_calculations/BDI.html")
+       
+        
+        else:
+            BDI = float(waist) * (float(weight) + float(butt)) / float(height) * float(height) * float(height) 
+            user=request.user 
+            test=CalculationsBDI.objects.filter(user=user).last()
+            user=request.user
+            addbdi= CalculationsBDI(user=user,BDI=BDI)
+            addbdi.save() 
+            return render(request,"Diet_calculations/BDI.html",{"bdi":addbdi})
+             
+    else:
+        user=request.user 
+        test=CalculationsBDI.objects.filter(user=user).last()
+        return render(request,"Diet_calculations/BDI.html",{"bdi":test})
+
+    
     
 
     

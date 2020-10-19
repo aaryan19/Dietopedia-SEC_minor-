@@ -242,16 +242,18 @@
 							</div>
 
 
+						<form class="form-container" action="" method="POST">
+								{% csrf_token %}
 
+							<input type="number" id="height" name="height" style='-moz-appearance: textfield;'>
+							<p class="number">Height (in cm)</p>
+							<input type="number" id="weight"name="weight"style='-moz-appearance: textfield;'>
+							<p class="number" >Weight (in kg)</p>
+							<input type="number" id="waist"name="waist"style='-moz-appearance: textfield;'>
+							<p class="number">Circumference of the waist(in cm)</p>
+							<input type="number" id="butt"name="butt"style='-moz-appearance: textfield;'>
+							<p class="number">Circumference of the butt(in cm)</p>
 
-							<input type="text" id="h">
-							<p class="text">Height (in cm)</p>
-							<input type="text" id="w">
-							<p class="text">Weight (in kg)</p>
-							<input type="text" id="age">
-							<p class="text">Age(Default is Your age {{user.customers.Age}}) </p>
-							<input type="text" id="a">
-							<p class="text">Circumference of the waist(in cm)</p>
 							<h2 id="result" style="margin-top: 8%;margin-left: 13%;width: 150%;"></h2>
 							<h2 id="test" style="margin-top: 8%;margin-left: 13%;width: 150%; color:white"></h2>
 
@@ -261,11 +263,13 @@
 					<br>
 					<br>
 
-					<button type="button" class="btn btn-primary btn-icon icon-left" onclick="BDI()"
+					<button type="submit" class="btn btn-primary btn-icon icon-left" onclick="BDI()"
 						style="margin-left: 79%;margin-top: -6%;">
 						Calculate BDI
 						<i class="entypo-mail"></i>
 					</button>
+				</form>
+
 
 					<script type="text/javascript">
 						function BDI(){
@@ -296,10 +300,7 @@
 									document.getElementById("message").innerHTML="Obese	"
 								}
 							}
-							else(age<19)
-									{
-	
-									}
+						
 	
 							
 						}
@@ -313,11 +314,11 @@
 
 					<!-- for height and weight -->
 					<style media="screen">
-						#w,
-						#h,
-						#a,
-						#b,
-						#age {
+						#weight,
+						#height,
+						#waist,
+						#butt
+						 {
 							color: white;
 							text-align: left;
 							font-size: 20px;

@@ -290,12 +290,12 @@
 								</div>
 
 								<div style="margin-left: 5%;margin-top: 11%;margin-bottom: 9%;">
-									<input type="text" id="height" name='height'>
-									<p class="text">Height (in cm)</p>
-									<input type="text" id="weight"name='weight'>
-									<p class="text" name='weight'>Weight (in kg)</p>
-									<input type="text" id="age" name='age'>
-									<p class="text">Age(default is {{user.customers.Age}}) </p>
+									<input type="number" id="height" name='height' style='-moz-appearance: textfield;'>
+									<p class="number">Height (in cm)</p>
+									<input type="number" id="weight"name='weight'style='-moz-appearance: textfield;'>
+									<p class="number" name='weight'>Weight (in kg)</p>
+									<input type="number" id="age" name='age'style='-moz-appearance: textfield;'>
+									<p class="number">Age(default is {{user.customers.Age}}) </p>
 									<h3 id="result" style="margin-top: 31%;margin-left: -10%;width: 188%;">You need  {{user.calculationsbmi.BMR}}/per
 										Day</h3>
 
