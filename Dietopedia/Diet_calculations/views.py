@@ -85,18 +85,21 @@ def BDI(request):
         weight=request.POST['weight']
         waist=request.POST['waist']
         butt=request.POST['butt']
-
-        if (int(heightin)>11):
-            remainderinc= 12 % int(heightin)
-            heightinc2=remainderinc
-            heightft2=int(heightfet)+((int(heightin)-int(remainderinc))/12) 
+        if (2<int(heightfet)<9):
+            messages.info(request,"Incorrect value")
+            return render(request,"Diet_calculations/BDI.html")
         else:
-            HeightFeetConvert = int(heightfet) * 12
-            remainderinc=int(heightin)%12
-            height=HeightFeetConvert+remainderinc
-
+            if (int(heightin)>11):
+                remainderinc= 12 % int(heightin)
+                heightinc2=remainderinc
+                heightft2=int(heightfet)+((int(heightin)-int(remainderinc))/12) 
+            else:
+                HeightFeetConvert = int(heightfet) * 12
+                remainderinc=int(heightin)%12
+                height=HeightFeetConvert+remainderinc
+               
            
-        if 2<int(height)<213:   
+        if 2<int(heightfet)<8:   
             if 15<int(weight)<200:
                 if 12<int(waist)<4000 :
                     if 12<int(butt)<4000:
