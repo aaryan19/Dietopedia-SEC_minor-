@@ -1,0 +1,480 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Profile" />
+	<meta name="author" content="" />
+
+
+	<title>Profile</title>
+
+	<link rel="stylesheet"
+		href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/font-icons/entypo/css/entypo.css' %}">
+	<link rel="stylesheet" href="{% static '//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' %}">
+	<link rel="stylesheet" href="{% static 'Profile/Profile.css' %}">
+
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-core.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-theme.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-forms.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'Website_all/assets/css/skins/green.css' %}">
+
+	<script src="{% static 'Website_all/assets/js/jquery-1.11.3.min.js' %}"></script>
+
+
+
+</head>
+
+<body class="page-body  skin-green loaded" data-url="http://neon.dev">
+
+	<div class="page-container sidebar-collapsed">
+		<!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+
+
+		<div class="sidebar-menu">
+
+			<div class="sidebar-menu-inner pt-6">
+
+				<header class="logo-env">
+
+					<!-- logo -->
+					<div class="logo ">
+						<a href="index.html">
+							<h1 style=" font-size:300% ; color:white ">Dietopedia</h1>
+						</a>
+					</div>
+
+					<!-- logo collapse icon -->
+					<div class="sidebar-collapse" style="margin-left: 10px;">
+						<a href="#" class="sidebar-collapse-icon">
+							<!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+							<i class="entypo-menu"></i>
+						</a>
+					</div>
+
+
+					<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+					<div class="sidebar-mobile-menu visible-xs">
+						<a href="#" class="with-animation">
+							<!-- add class "with-animation" to support animation -->
+							<i class="entypo-menu"></i>
+						</a>
+					</div>
+
+				</header>
+
+
+				<ul id="main-menu" class="main-menu" style="">
+					<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+					<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+					
+					<li class="has-sub root-level">
+						<a href="../calculator/History">
+							<i class="entypo-layout"></i>
+							<span class="title">C</span>
+						</a>
+
+					</li>
+
+
+					<li class="has-sub root-level">
+						<a href="../Recomendation">
+							<i class="entypo-newspaper"></i>
+							<span class="title">Dish Recomendation</span>
+						</a>
+
+					</li>
+
+
+					<li class="active root-level">
+						<a href="../profile">
+							<i class="entypo-newspaper"></i>
+							<span class="title">Profile</span>
+						</a>
+
+					</li>
+
+					<li class="has-sub root-level">
+						<a href="Logout">
+							<i class="entypo-doc-text"></i>
+							<span class="title">Log Out</span>
+						</a>
+					</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+
+
+		<div class="main-content" style="position: fixed; width: 100%;margin-left: -1%;">
+
+			<div class="row">
+
+				<!-- Profile Info and Notifications -->
+				<div class="col-md-6 col-sm-8 clearfix">
+
+					<ul class="user-info pull-left pull-none-xsm">
+
+						<!-- Profile Info -->
+						<li class="profile-info dropdown">
+							<!-- add class "pull-right" if you want to place this from right -->
+
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img class="img-circle" src="/images/9.png" width="44">
+
+								<b>Hello ,{{user.username}}</b>
+							</a>
+
+							<ul class="dropdown-menu">
+
+								<!-- Reverse Caret -->
+								<li class="caret"></li>
+
+								<!-- Profile sub-links -->
+								<li>
+									<a href="extra-timeline.html">
+										<i class="entypo-user"></i>
+										Edit Profile
+									</a>
+								</li>
+
+
+
+								<li>
+									<a href="extra-calendar.html">
+										<i class="entypo-calendar"></i>
+										Calendar
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="entypo-clipboard"></i>
+										Subscription
+									</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+
+
+
+				</div>
+
+
+				<!-- Raw Links -->
+
+			</div>
+
+			<hr>
+
+
+			<div class="profile-env">
+				<header class="row" style="background-color: #4b97b582;margin-left: -5%;">
+
+					<div class="main-content">
+						<!-- Top navbar -->
+						<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+							<div class="container-fluid">
+								<!-- Brand -->
+
+								<!-- Form -->
+
+
+
+								<ul class="navbar-nav align-items-center d-none d-md-flex">
+									<li class="nav-item dropdown">
+										<a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false">
+											<div class="media align-items-center">
+
+												<div class="media-body ml-2 d-none d-lg-block">
+
+												</div>
+											</div>
+										</a>
+										<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+											<div class=" dropdown-header noti-title">
+												<h6 class="text-overflow m-0">Welcome!</h6>
+											</div>
+											<a href="../examples/profile.html" class="dropdown-item">
+												<i class="ni ni-single-02"></i>
+												<span>My profile</span>
+											</a>
+											<a href="../examples/profile.html" class="dropdown-item">
+												<i class="ni ni-settings-gear-65"></i>
+												<span>Settings</span>
+											</a>
+											<a href="../examples/profile.html" class="dropdown-item">
+												<i class="ni ni-calendar-grid-58"></i>
+												<span>Activity</span>
+											</a>
+											<a href="../examples/profile.html" class="dropdown-item">
+												<i class="ni ni-support-16"></i>
+												<span>Support</span>
+											</a>
+											<div class="dropdown-divider"></div>
+											<a href="#!" class="dropdown-item">
+												<i class="ni ni-user-run"></i>
+												<span>Logout</span>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<!-- Header -->
+
+						<!-- Page content -->
+						<div class="container-fluid mt--7">
+							<div class="row">
+								<div class="col-xl-4 order-xl-2 mb-5 mb-xl-0" style="margin-left: -14%;margin-top: 5%;">
+									<div class="card card-profile shadow" style="width: 65%;margin-left: 36%;">
+										<div class="row justify-content-center">
+											<div class="col-lg-3 order-lg-2">
+												<div class="card-profile-image">
+													<a href="#">
+														<img src="/images/9.png" class="rounded-circle">
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+											<div class="d-flex justify-content-between">
+												<a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+												<a href="#" class="btn btn-sm btn-default float-right">Message</a>
+											</div>
+										</div>
+										<div class="card-body pt-0 pt-md-4">
+											<div class="row">
+												<div class="col">
+													<div
+														class="card-profile-stats d-flex justify-content-center mt-md-5">
+														<div>
+															<span class="heading">22</span>
+															<span class="description">Friends</span>
+														</div>
+														<div>
+															<span class="heading">10</span>
+															<span class="description">Plans Selected</span>
+														</div>
+														<div>
+															<span class="heading">89</span>
+															<span class="description">Comments</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="text-center">
+												<h3>
+													{{user.username}}<span class="font-weight-light">,
+														{{user.customers.Age}}</span>
+												</h3>
+												<div class="h5 font-weight-300">
+													<i class="ni location_pin mr-2"></i>
+												</div>
+												<div class="h5 mt-4">
+													<i class="ni business_briefcase-24 mr-2"></i>Engineer
+												</div>
+												<div>
+													<i class="ni education_hat mr-2"></i>University of Computer Science
+												</div>
+												<hr class="my-4">
+												<p>writing Bio here pending .</p>
+												<a href="#">Show more</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-8 order-xl-1" style="margin-left: -1%;">
+									<div class="card bg-secondary shadow">
+										<div class="card-header bg-white border-0">
+											<div class="row align-items-center">
+												<div class="col-8">
+													<h3 class="mb-0">My account</h3>
+												</div>
+												<div class="col-4 text-right">
+													<a href="#!" class="btn btn-sm btn-primary">Settings</a>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<form>
+												<h6 class="heading-small text-muted mb-4">User information</h6>
+												<div class="pl-lg-4">
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="form-group focused">
+																<label class="form-control-label"
+																	for="input-username">Username</label>
+																<input type="text" id="input-username"
+																	class="form-control form-control-alternative"
+																	placeholder="Username" value="{{user.username}}">
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="form-group">
+																<label class="form-control-label"
+																	for="input-email">Email address</label>
+																<input type="email" id="input-email"
+																	class="form-control form-control-alternative"
+																	placeholder="{{user.email}}">
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="form-group focused">
+																<label class="form-control-label"
+																	for="input-first-name">First name</label>
+																<input type="text" id="input-first-name"
+																	class="form-control form-control-alternative"
+																	placeholder="First name"
+																	value="{{user.first_name}}">
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="form-group focused">
+																<label class="form-control-label"
+																	for="input-last-name">Last name</label>
+																<input type="text" id="input-last-name"
+																	class="form-control form-control-alternative"
+																	placeholder="Last name" value="{{user.last_name}}">
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr class="my-4">
+												<!-- Address -->
+												<h6 class="heading-small text-muted mb-4">Contact information</h6>
+												<div class="pl-lg-4">
+													<div class="row">
+														<div class="col-md-12">
+															<div class="form-group focused">
+																<label class="form-control-label"
+																	for="input-address">Address</label>
+																<input id="input-address"
+																	class="form-control form-control-alternative"
+																	placeholder="Home Address" value="Nepal"
+																	type="text">
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-lg-4">
+															<div class="form-group focused">
+																<label class="form-control-label"
+																	for="input-city">City</label>
+																<input type="text" id="input-city"
+																	class="form-control form-control-alternative"
+																	placeholder="City" value="Kathmandu">
+															</div>
+														</div>
+														<div class="col-lg-4">
+															<div class="form-group focused">
+																<label class="form-control-label"
+																	for="input-country">Country</label>
+																<input type="text" id="input-country"
+																	class="form-control form-control-alternative"
+																	placeholder="{{user.customers.Address}}"
+																	value="Nepal">
+															</div>
+														</div>
+														<div class="col-lg-4">
+															<div class="form-group">
+																<label class="form-control-label"
+																	for="input-country">Postal code</label>
+																<input type="number" id="input-postal-code"
+																	class="form-control form-control-alternative"
+																	placeholder="11460">
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr class="my-4">
+												<!-- Description -->
+												<h6 class="heading-small text-muted mb-4">About me</h6>
+												<div class="pl-lg-4">
+													<div class="form-group focused">
+														<label>About Me</label>
+														<textarea rows="4" class="form-control form-control-alternative"
+															placeholder="A few words about you ...">Test</textarea>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- tye[[ensdkjans here]] -->
+
+
+
+
+
+
+
+
+
+
+				</header>
+			</div>
+
+
+			<div class="page-container sidebar-collapsed">
+				<!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+
+			</div>
+
+			<!-- Imported scripts on this page -->
+			<script src="/Static/Website_all/assets/js/neon-chat.js"></script>
+
+
+			<!-- JavaScripts initializations and stuff -->
+			<script src="/Static/Website_all/assets/js/neon-custom.js"></script>
+
+
+
+			<!-- Bottom scripts (common) -->
+			<script src="/Static/Website_all/assets/js/gsap/TweenMax.min.js"></script>
+			<script src="/Static/Website_all/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+			<script src="/Static/Website_all/assets/js/bootstrap.js"></script>
+			<script src="/Static/Website_all/assets/js/joinable.js"></script>
+			<script src="/Static/Website_all/assets/js/resizeable.js"></script>
+			<script src="/Static/Website_all/assets/js/neon-api.js"></script>
+			<script src="/Static/Website_all/assets/js/rickshaw/vendor/d3.v3.js"></script>
+
+
+			<!-- Imported scripts on this page -->
+			<script src="/Static/Website_all/assets/js/rickshaw/rickshaw.min.js"></script>
+			<script src="/Static/Website_all/assets/js/raphael-min.js"></script>
+			<script src="/Static/Website_all/assets/js/morris.min.js"></script>
+			<script src="/Static/Website_all/assets/js/jquery.peity.min.js"></script>
+			<script src="/Static/Website_all/assets/js/neon-charts.js"></script>
+			<script src="/Static/Website_all/assets/js/jquery.sparkline.min.js"></script>
+			<script src="/Static/Website_all/assets/js/neon-chat.js"></script>
+
+
+
+		</div>
+	</div>
+
+
+</body>
+
+</html>

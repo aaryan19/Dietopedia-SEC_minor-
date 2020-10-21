@@ -24,6 +24,7 @@ urlpatterns = [
     path('profile/',include('Profile.urls')),
     path('log/',include('Login.urls')),
     path('',include('Dish_Recomendation.urls')),
-    path('',include('Landing_Page.urls'))
+    path('',include('Landing_Page.urls')),
+    path('Dietitian/',include('Dietician.urls'))
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

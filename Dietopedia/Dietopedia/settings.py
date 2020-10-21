@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'Profile',
     'Login.apps.LoginConfig',
     'Dish_Recomendation',
-    'Landing_Page'
+    'Landing_Page',
+    'Dietician'
 ]
 
 MIDDLEWARE = [
