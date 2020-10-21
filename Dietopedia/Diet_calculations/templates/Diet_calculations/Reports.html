@@ -1,0 +1,323 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Neon Admin Panel" />
+    <meta name="author" content="" />
+
+
+    <title>History</title>
+
+
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/font-icons/entypo/css/entypo.css' %}">
+    <link rel="stylesheet"
+        href="{% static 'Website_all/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css' %}">
+    <link rel="stylesheet" href="{% static '//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' %}">
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-core.css' %}">
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/neon-forms.css' %}">
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'Website_all/assets/css/skins/green.css' %}">
+
+    <script src="{% static 'Website_all/assets/js/jquery-1.11.3.min.js' %}"></script>
+
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+
+<body class="page-body  skin-green" data-url="http://neon.dev">
+
+    <div class="page-container">
+        <!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+
+
+        <div class="sidebar-menu">
+
+            <div class="sidebar-menu-inner pt-6">
+
+                <header class="logo-env">
+
+                    <!-- logo -->
+                    <div class="logo ">
+                        <a href="index.html">
+                            <h1 style=" font-size:300% ; color:white " ,>Dietopedia</h1>
+                        </a>
+                    </div>
+
+                    <!-- logo collapse icon -->
+                    <div class="sidebar-collapse" style="margin-left: 10px;">
+                        <a href="#" class="sidebar-collapse-icon">
+                            <!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+                            <i class="entypo-menu"></i>
+                        </a>
+                    </div>
+
+
+                    <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+                    <div class="sidebar-mobile-menu visible-xs">
+                        <a href="#" class="with-animation">
+                            <!-- add class "with-animation" to support animation -->
+                            <i class="entypo-menu"></i>
+                        </a>
+                    </div>
+
+                </header>
+
+
+                <ul id="main-menu" class="main-menu" style="margin-top: 150px;">
+                    <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+                    <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+                    <li class="has-sub">
+                        <a href="BMR">
+                            <i class="entypo-calendar"></i>
+
+                            <span class="title">Calculator</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="BMR">
+                                    <span class="title">BMR</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="BDI">
+                                    <span class="title">BDI</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="History">
+                            <i class="entypo-layout"></i>
+                            <span class="title">History</span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="has-sub">
+                        <a href="../Recomendation">
+                            <i class="entypo-newspaper"></i>
+                            <span class="title">Dish Recomendation</span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="has-sub">
+                        <a href="../profile">
+                            <i class="entypo-newspaper"></i>
+                            <span class="title">Profile</span>
+                        </a>
+
+                    </li>
+
+                    <li class="has-sub">
+                        <a href="Logout">
+                            <i class="entypo-doc-text"></i>
+                            <span class="title">Log Out</span>
+                        </a>
+                    </li>
+
+                </ul>
+                
+            </div>
+            
+
+        </div>
+
+        <div class="main-content">
+						
+            <div class="row">
+                
+                <div class="col-md-6 col-sm-8 clearfix">
+
+					<ul class="user-info pull-left pull-none-xsm">
+
+						<!-- Profile Info -->
+						<li class="profile-info dropdown">
+							<!-- add class "pull-right" if you want to place this from right -->
+
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="{{user.customers.ProfilePic.url}}" alt="" class="img-circle" width="44" />
+								{{user.first_name}}
+							</a>
+
+							<ul class="dropdown-menu">
+
+								<!-- Reverse Caret -->
+								<li class="caret"></li>
+
+								<!-- Profile sub-links -->
+								<li>
+									<a href="../profile">
+										<i class="entypo-user"></i>
+										Profile
+									</a>
+								</li>
+
+
+
+
+
+
+							</ul>
+						</li>
+
+					</ul>
+
+
+
+				</div>
+
+                
+                
+                    <!-- Raw Links -->
+                    <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+                
+                        <ul class="list-inline links-list pull-right">
+                
+                            <!-- Language Selector -->
+                            
+                            
+                            <li>
+                                <a href="#" data-toggle="chat" data-collapse-sidebar="1">
+                                    <i class="entypo-chat"></i>
+                                    Chat
+                
+                                    <span class="badge badge-success chat-notifications-badge">3</span>
+                                </a>
+                            </li>
+                
+                            <li class="sep"></li>
+                
+                            <li>
+                                <a href="Logout">
+                                    Log Out <i class="entypo-logout right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                
+                    </div>
+                
+                </div></div>
+                <div id="chat" class="fixed" data-current-user="Art Ramadani" data-order-by-status="1" data-max-chat-history="25" style="background-color: black;">
+	
+		<div class="chat-inner" style="overflow: hidden; outline: currentcolor none medium;" tabindex="5000">
+	
+	
+			<h2 class="chat-header">
+				<a href="#" class="chat-close"><i class="entypo-cancel"></i></a>
+	
+				<i class="entypo-users"></i>
+				Chat
+				<span class="badge badge-success">3</span>
+			</h2>
+	
+	
+			<div class="chat-group" id="group-1">
+				<strong>Favorites</strong>
+	
+				
+				
+				
+				
+				
+			<a href="#" id="sample-user-123" data-conversation-history="#sample_history"><span class="user-status is-online"></span> <em>Catherine J. Watkins</em><span class="badge badge-info">1</span></a><a href="#" id="ui-id-1"><span class="user-status is-online"></span> <em>Nicholas R. Walker</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-2"><span class="user-status is-busy"></span> <em>Susan J. Best</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-4"><span class="user-status is-idle"></span> <em>Fernando G. Olson</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-3"><span class="user-status is-offline"></span> <em>Brandon S. Young</em><span class="badge badge-info is-hidden">0</span></a></div>
+	
+	
+			<div class="chat-group" id="group-2">
+				<strong>Work</strong>
+	
+				
+				
+				
+			<a href="#" id="ui-id-7"><span class="user-status is-busy"></span> <em>Rodrigo E. Lozano</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-5"><span class="user-status is-offline"></span> <em>Robert J. Garcia</em><span class="badge badge-info is-hidden">0</span></a><a href="#" data-conversation-history="#sample_history_2" id="ui-id-6"><span class="user-status is-offline"></span> <em>Daniel A. Pena</em><span class="badge badge-info">2</span></a></div>
+	
+	
+			<div class="chat-group" id="group-3">
+				<strong>Social</strong>
+	
+				
+				
+				
+				
+			<a href="#" id="ui-id-10"><span class="user-status is-online"></span> <em>Kathleen M. Canales</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-8"><span class="user-status is-busy"></span> <em>Velma G. Pearson</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-9"><span class="user-status is-offline"></span> <em>Margaret R. Dedmon</em><span class="badge badge-info is-hidden">0</span></a><a href="#" id="ui-id-11"><span class="user-status is-offline"></span> <em>Tracy J. Rodriguez</em><span class="badge badge-info is-hidden">0</span></a></div>
+	
+		</div>
+	
+		<!-- conversation template -->
+		<div class="chat-conversation">
+	
+			<div class="conversation-header">
+				<a href="#" class="conversation-close"><i class="entypo-cancel"></i></a>
+	
+				<span class="user-status"></span>
+				<span class="display-name"></span>
+				<small></small>
+			</div>
+	
+			<ul class="conversation-body">
+			</ul>
+	
+			<div class="chat-textarea">
+				<textarea class="form-control autogrow" placeholder="Type your message" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 32px;"></textarea>
+			</div>
+	
+        </div>
+        
+        
+	
+    </div>
+    
+        
+        <!-- Imported styles on this page -->
+        <link rel="stylesheet" href="{% static 'Website_all/assets/js/jvectormap/jquery-jvectormap-1.2.2.css' %}">
+        <link rel="stylesheet" href="{% static 'Website_all/assets/js/rickshaw/rickshaw.min.css' %}">
+
+        <!-- Bottom scripts (common) -->
+        <script src="{% static 'Website_all/assets/js/gsap/TweenMax.min.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/bootstrap.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/joinable.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/resizeable.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/neon-api.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+
+
+        <!-- Imported scripts on this page -->
+        <script src="{% static 'Website_all/assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/jquery.sparkline.min.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/rickshaw/vendor/d3.v3.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/rickshaw/rickshaw.min.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/raphael-min.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/morris.min.js' %}"></script>
+        <script src="{% static 'Website_all/assets/assets/js/toastr.js' %}"></script>
+        <script src="{% static 'Website_all/assets/js/neon-chat.js' %}"></script>
+
+
+        <!-- JavaScripts initializations and stuff -->
+        <script src="{% static 'Website_all/assets/js/neon-custom.js' %}"></script>
+
+
+        <!-- Demo Settings -->
+        <script src="{% static 'Website_all/assets/js/neon-demo.js' %}"></script>
+
+</body>
+
+</html>

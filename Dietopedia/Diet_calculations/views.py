@@ -85,8 +85,9 @@ def BDI(request):
         weight=request.POST['weight']
         waist=request.POST['waist']
         butt=request.POST['butt']
-        if (2<int(heightfet)<9):
-            messages.info(request,"Incorrect value")
+        print(heightfet)
+        if (int(heightfet)<1):
+            messages.info(request,"Incorrect value2")
             return render(request,"Diet_calculations/BDI.html")
         else:
             if (int(heightin)>11):
@@ -156,26 +157,24 @@ def BDI(request):
         return render(request,"Diet_calculations/BDI.html",{"bdi":test})
 
     
-    
 
     
 
 
 @login_required(login_url='../log/signin')
 def Profile(request):
-
-
-    
     return render(request,"Diet_calculations/Profile.html",{})
+
+
 @login_required(login_url='../log/signin')
-
-
 def History(request):
     user=request.user
     all_bmr=CalculationsBMI.objects.filter(user=user)
     all_bdi=CalculationsBDI.objects.filter(user=user)
     return render(request,"Diet_calculations/History.html",{"bmi":all_bmr,"bdi":all_bdi})
 
+def Report(request):
+    return render(request,"Diet_calculations/Reports.html")
 
 def Logout(request):
     auth.logout(request)
