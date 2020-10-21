@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import auth,messages
 from django.contrib.auth.decorators import login_required
-from .models import CalculationsBMI,CalculationsBDI
+from .models import Calculations
 from django.contrib.auth.models import User
 from Login.models import Customers
 
@@ -37,12 +37,13 @@ def BMR(request):
                             
                 elif (exer == '5'):
                     bdiwithexercise= bmr*1.9
+
                 user=request.user 
-                test=CalculationsBMI.objects.filter(user=user).last()
+                test=Calculations.objects.filter(user=user,fieldname="BMR")
                 user=request.user
-                addbdio= CalculationsBMI(user=user,BMR=bdiwithexercise)
+                addbdio= Calculations(user=user,BMR=bdiwithexercise,fieldname="BMR")
                 addbdio.save()
-                return render(request,"Diet_calculations/BMR.html",{"test":test})
+                return render(request,"Diet_calculations/BMR.html",{'test':test})
                 
             else:
                 bmr =655 + ( 4.35 * float(weight)) + ( 4.7 * float(height) ) - ( 4.7 * float(age))
@@ -62,9 +63,9 @@ def BMR(request):
                     bdiwithexercise= bmr*1.9
                 
                 user=request.user 
-                test=CalculationsBMI.objects.filter(user=user).last()
+                test=Calculations.objects.filter(user=user,fieldname="BMR").last()
                 user=request.user
-                addbdio= CalculationsBMI(user=user,BMR=bdiwithexercise)
+                addbdio= Calculations(user=user,BMR=bdiwithexercise,fieldname="BMR")
                 addbdio.save() 
                 return render(request,"Diet_calculations/BMR.html",{"test":test})
            
@@ -72,7 +73,7 @@ def BMR(request):
              
      else:
         user=request.user 
-        test=CalculationsBMI.objects.filter(user=user).last()
+        test=Calculations.objects.filter(user=user,fieldname="BMR").last()
         return render(request,"Diet_calculations/BMR.html",{"test":test})
 
          
@@ -85,6 +86,7 @@ def BDI(request):
         weight=request.POST['weight']
         waist=request.POST['waist']
         butt=request.POST['butt']
+        testing="BDI"
         print(heightfet)
         if (int(heightfet)<1):
             messages.info(request,"Incorrect value2")
@@ -105,10 +107,10 @@ def BDI(request):
                 if 12<int(waist)<4000 :
                     if 12<int(butt)<4000:
                         BDI = (int(weight) * 703 * (int(waist) + int(butt)) )/ (int(height)*int(height)*int(height))
-                        user=request.user 
-                        test=CalculationsBDI.objects.filter(user=user).last()
                         user=request.user
-                        addbdi= CalculationsBDI(user=user,BDI=BDI)
+                        test=Calculations.objects.filter(user=user)
+                        user=request.user
+                        addbdi=Calculations(user=user,BDI=BDI,fieldname="BDI")
                         addbdi.save() 
                         if int(BDI)<5:
                             messages.info(request,"Probably Dead and dried")
@@ -152,7 +154,7 @@ def BDI(request):
            
     else:
         user=request.user 
-        test=CalculationsBDI.objects.filter(user=user).last()
+        test=Calculations.objects.filter(user=user)
         messages.info(request,"Enter value")
         return render(request,"Diet_calculations/BDI.html",{"bdi":test})
 
@@ -169,9 +171,9 @@ def Profile(request):
 @login_required(login_url='../log/signin')
 def History(request):
     user=request.user
-    all_bmr=CalculationsBMI.objects.filter(user=user)
-    all_bdi=CalculationsBDI.objects.filter(user=user)
-    return render(request,"Diet_calculations/History.html",{"bmi":all_bmr,"bdi":all_bdi})
+    all_bmr=Calculations.objects.filter(user=user,fieldname="BMR")
+    all_bdi=Calculations.objects.filter(user=user,fieldname="BDI")
+    return render(request,"Diet_calculations/History.html",{"bmr":all_bmr,"bdi":all_bdi})
 
 def Report(request):
     return render(request,"Diet_calculations/Reports.html")

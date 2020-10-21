@@ -239,20 +239,20 @@
 							<tr>
 
 								<th>Name</th>
-								<th>BMI</th>
+								<th>BMR</th>
 								<th>Calories</th>
 								<th>Date and Time</th>
 								<th>Progress</th>
 							</tr>
 						</thead>
 
-						{% for items in bmi %}
+						{% for items in bmr %}
 
 						<tbody>
 							<tr>
 
 								<td>{{ user.first_name }}</td>
-								<td>{{ items.field }}</td>
+								<td>{{ items.fieldname }}</td>
 								<td>{{ items.BMR }}</td>
 								<td>{{ items.date }}</td>
 								<td>
@@ -303,7 +303,7 @@
 							<tr>
 
 								<td>{{ user.first_name }}</td>
-								<td>{{ datas.field }}</td>
+								<td>{{ datas.fieldname }}</td>
 								<td>{{ datas.BDI }}</td>
 								<td>{{ datas.date }}</td>
 								<td>
